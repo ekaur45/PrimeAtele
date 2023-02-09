@@ -1,7 +1,7 @@
 const { CheckAuth } = require("../middlewares/jwr.middleware");
 const controller = require("../controllers/admin.controller");
 const router = require("express").Router();
-router.get("/all-customers",CheckAuth(),controller.allCustomer);
+router.post("/all-customers",CheckAuth(),controller.allCustomer);
 router.get("/export-customers",CheckAuth(),controller.exportCustomers);
 router.post("/create-customer",CheckAuth(),controller.createCustomer);
 router.post("/edit-customer",CheckAuth(),controller.editCustomer);

@@ -13,7 +13,7 @@ function DashboardView() {
     const [isDownloading, setIsDownloading] = useState(false);
     const getData = async () => {
         var token = localStorage.getItem("token");
-        var result = await axios({ url: config.apiUrl+"admin/all-customers", method: "GET", headers: { "Authorization": token } });
+        var result = await axios({ url: config.apiUrl+"admin/all-customers", method: "POST", data:{id: Number(localStorage.getItem("id")) }, headers: { "Authorization": token } });
         if (result.data.status == 401) return navigate("/login");
         if (result.data.status == 200) {
             setOldData([...result.data.data]);
