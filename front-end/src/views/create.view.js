@@ -10,7 +10,7 @@ function CreateView(){
     const navigate = useNavigate();
     const onFormSubmit = e =>{
         e.preventDefault();
-        if(password!=passwordR) return alert("Passwords does not match");
+        if(password!=passwordR) return toastr.error("Passwords does not match");
         setIsLoading(true);
         axios({url:'http://localhost:8000/api/account/create',method:"POST",data:{email:email,password:password}}).then(x=>{
             setIsLoading(false);
