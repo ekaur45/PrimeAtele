@@ -4,6 +4,7 @@ import axios from "axios";
 import "./login.css";
 import Swal from "sweetalert2";
 import toastr from "toastr";
+import config from "../utils";
 function LoginView() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -13,7 +14,7 @@ function LoginView() {
     const onFormSubmit = e =>{
         setIsLoading(true);
         e.preventDefault();
-        axios({url:'http://localhost:8000/api/account/login',method:"POST",data:{email:email,password:password}}).then(x=>{
+        axios({url: config.apiUrl+'/account/login',method:"POST",data:{email:email,password:password}}).then(x=>{
             setIsLoading(false);
             if(x.data.status == 200){
                 localStorage.setItem("token",x.data.data.token);
