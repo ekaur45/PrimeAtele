@@ -17,6 +17,7 @@ function LoginView() {
             setIsLoading(false);
             if(x.data.status == 200){
                 localStorage.setItem("token",x.data.data.token);
+                localStorage.setItem("id",x.data.data.id);
                 navigate("/");
             }else{
                 //alert(x.data.message);

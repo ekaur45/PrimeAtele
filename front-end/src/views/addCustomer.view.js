@@ -23,7 +23,8 @@ function AddCustomer() {
             phone,
             note,
             todaysPickup,
-            meals
+            meals,
+            id: Number(localStorage.getItem("id"))
         }, headers: { "Authorization": token } });
         if (result.data.status == 401) return navigate("/login");
         if (result.data.status == 200) {
