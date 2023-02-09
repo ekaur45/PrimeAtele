@@ -14,7 +14,7 @@ function LoginView() {
     const onFormSubmit = e =>{
         setIsLoading(true);
         e.preventDefault();
-        axios({url: config.apiUrl+'/account/login',method:"POST",data:{email:email,password:password}}).then(x=>{
+        axios({url: config.apiUrl+'account/login',method:"POST",data:{email:email,password:password}}).then(x=>{
             setIsLoading(false);
             if(x.data.status == 200){
                 localStorage.setItem("token",x.data.data.token);
