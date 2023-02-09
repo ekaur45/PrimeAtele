@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
     port:"25060",
     database:"defaultdb",
     user:"doadmin",
-    password:"AVNS_UTm4kgm9-3d_bCJjzw0",
+    password:"AVNS_ziQllHDsU8fBGLm49UI",
     typeCast: function castField( field, useDefaultTypeCasting ) {
 
 		// We only want to cast bit fields that have a single-bit in them. If the field
