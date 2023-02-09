@@ -4,11 +4,11 @@ const { log } = require('./logger/logger.helper');
 
 const connection = mysql.createConnection({
     
-	host:process.env.MYSQL_HOST,
-    port:process.env.MYSQL_PORT,
-    database:process.env.MYSQL_NAME,
-    user:process.env.MYSQL_USER,
-    password:process.env.MYSQL_PASS,
+	host:"prime-atele-do-user-13535835-0.b.db.ondigitalocean.com",
+    port:"25060",
+    database:"defaultdb",
+    user:"doadmin",
+    password:"AVNS_UTm4kgm9-3d_bCJjzw0",
     typeCast: function castField( field, useDefaultTypeCasting ) {
 
 		// We only want to cast bit fields that have a single-bit in them. If the field
