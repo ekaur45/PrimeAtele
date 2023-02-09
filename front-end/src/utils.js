@@ -1,5 +1,5 @@
 const config = {
-    apiUrl:"http://localhost:8000/api/",
-    apiBase:"http://localhost:8000/"
+    apiUrl:"https://lionfish-app-o78zf.ondigitalocean.app/api/",
+    apiBase:"https://lionfish-app-o78zf.ondigitalocean.app/"
 };
 export default config;
