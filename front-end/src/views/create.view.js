@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-
+import toastr from "toastr";
 function CreateView(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -18,7 +18,7 @@ function CreateView(){
                 localStorage.setItem("token",x.data.data.token);
                 navigate("/");
             }else{
-                alert(x.data.message);
+                toastr.error(x.data.message)
             }
         })
     }

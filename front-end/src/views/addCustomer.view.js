@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Swal from "sweetalert2";
+import config from "../utils";
+import toastr from "toastr";
 function AddCustomer() {
     const navigate = useNavigate();
     const [name,setName] = useState("");
@@ -15,7 +17,7 @@ function AddCustomer() {
     const onCustomerAdd = async (e)=>{
         e.preventDefault();
         var token = localStorage.getItem("token");
-        var result = await axios({ url: "http://localhost:8000/api/admin/create-customer", method: "POST",data:{
+        var result = await axios({ url: config.apiUrl+"admin/create-customer", method: "POST",data:{
             name,
             email,
             phone,
@@ -25,10 +27,21 @@ function AddCustomer() {
         }, headers: { "Authorization": token } });
         if (result.data.status == 401) return navigate("/login");
         if (result.data.status == 200) {
-            alert(result.data.message);
+            reset();
+            toastr.success(result.data.message);
+            //Swal.fire("Success",result.data.message,"success");
         } else {
-            alert(result.data.message);
+            toastr.error(result.data.message);
+            //Swal.fire("Error",result.data.message,"error");
         }
+    }
+    const reset = e =>{
+        setName("");
+            setEmail("");
+            setPhone("");
+            setNote("");
+            setTodaysPickup("");
+            setMeals("");
     }
     return (
         <>

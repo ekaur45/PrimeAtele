@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-
+import toastr from "toastr";
 function ForgetView() {
     return (
         <>

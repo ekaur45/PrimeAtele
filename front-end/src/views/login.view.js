@@ -2,6 +2,8 @@ import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./login.css";
+import Swal from "sweetalert2";
+import toastr from "toastr";
 function LoginView() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -17,7 +19,8 @@ function LoginView() {
                 localStorage.setItem("token",x.data.data.token);
                 navigate("/");
             }else{
-                alert(x.data.message);
+                //alert(x.data.message);
+                toastr.error(x.data.message);
             }
         })
     }

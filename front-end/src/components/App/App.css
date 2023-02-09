@@ -1,2 +1,12 @@
 @import url('../../assets/css/bootstrap.min.css');
 @import url('../../assets/css/style_dashboard.css');
+@import url('../../../node_modules/toastr/build/toastr.css');
+.btn_primary_i{
+    font-family: "poppinsR";
+    background-color: #1696CB;
+    color: #ffffff !important;
+    text-align: center;
+    border-radius: 10px;
+    display: block;
+    text-decoration: none;
+}

@@ -8,6 +8,8 @@ import CreateView from '../../views/create.view';
 import Logout from '../logout';
 import ForgetView from '../../views/forgot.view';
 import ProfileView from '../../views/profile.view';
+import { useEffect } from 'react';
+import toastr from "toastr";
 const router = createBrowserRouter([
   {
     path:'/',
@@ -50,6 +52,8 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
+  useEffect(()=>{
+},[])
   return (
     <div className="App">
       <RouterProvider router={router} />

@@ -12,7 +12,7 @@ accountController.login = async (req,res,next) =>{
     var model = new LoginModel(req.body);
     if(!model.validate()) return res.BadRequest("All fields are required.");
     const result = await Account.loginAccount(model);
-    result.success == true ? res.Ok(result.data) :res.BadRequest(result.data);
+    result.success == true ? res.Ok(result.data) :res.BadRequest(result.data,"Username or password is not correct.");
 }
 /**
  * 

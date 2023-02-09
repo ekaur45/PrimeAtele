@@ -1,5 +1,6 @@
 const Admin = require("../models/admin.model");
 const { CustomerModel } = require("../models/customer/customer.model");
+const { EditCustomerModel } = require("../models/customer/edit-customer.model");
 
 const adminController = {};
 /**
@@ -9,8 +10,8 @@ const adminController = {};
  * @param {import("express").NextFunction} next 
  */
 adminController.allCustomer = async (req, res, next) => {
-    var result = await Admin.getAllCustomers();
-    result.success == true ? res.Ok(result.data) : res.BadRequest(result.data);
+    var result = await Admin.getAllCustomers(req.user.id);
+    result.success == true ? res.Ok(result.data) : res.BadRequest(result.data,"Something went wrong.");
 }
 /**
  * 
@@ -20,7 +21,7 @@ adminController.allCustomer = async (req, res, next) => {
  */
 adminController.getCustomer = async (req, res, next) => {
     var result = await Admin.getCustomer(req.query.id);
-    result.success == true ? res.Ok(result.data[0]) : res.BadRequest(result.data);
+    result.success == true ? res.Ok(result.data[0]) : res.BadRequest(result.data,"Something went wrong.");
 }
 
 /**
@@ -31,10 +32,76 @@ adminController.getCustomer = async (req, res, next) => {
  */
 adminController.createCustomer = async (req, res, next) => {
     var model = new CustomerModel(req.body);
-    if (!model.validate()) return res.BadRequest("All fields are required.");
+    model.userId = req.user.id;
+    if (!model.validate()) return res.BadRequest({},"All fields are required.");
     const result = await Admin.createCustomer(model);
-    result.success == true ? res.Ok({}, "Customer added") : res.BadRequest(result.data);
+    result.success == true ? res.Ok({}, "Customer added.") : res.BadRequest(result.data,"Error adding customer.");
 }
+
+/**
+ * 
+ * @param {import("express").Request} req 
+ * @param {import("express").Response} res 
+ * @param {import("express").NextFunction} next 
+ */
+adminController.editCustomer = async (req, res, next) => {
+    var model = new EditCustomerModel(req.body);
+    model.userId = req.user.id;
+    if (!model.validate()) return res.BadRequest({},"All fields are required.");
+    const result = await Admin.editCustomer(model);
+    result.success == true ? res.Ok({}, "Customer updated.") : res.BadRequest(result.data,"Error updating customer.");
+}
+
+/**
+ * 
+ * @param {import("express").Request} req 
+ * @param {import("express").Response} res 
+ * @param {import("express").NextFunction} next 
+ */
+adminController.createPickup = async (req, res, next) => {
+    if(req.query.cid&&req.query.num){
+        const result = await Admin.createPickup(req.query.cid,req.query.num);
+        if(result.success){
+            return res.Ok(result.data);
+        }
+    }
+    res.BadRequest({},"Error adding pickup.");
+}
+
+/**
+ * 
+ * @param {import("express").Request} req 
+ * @param {import("express").Response} res 
+ * @param {import("express").NextFunction} next 
+ */
+adminController.getPickup = async (req, res, next) => {
+    if(req.query.cid){
+        const result = await Admin.getPickups(req.query.cid);
+        if(result.success){
+            return res.Ok(result.data);
+        }
+    }
+    res.BadRequest({},"Error fetching pickup.");
+}
+
+/**
+ * 
+ * @param {import("express").Request} req 
+ * @param {import("express").Response} res 
+ * @param {import("express").NextFunction} next 
+ */
+adminController.updatePickup = async (req, res, next) => {
+    if(req.body){
+        const result = await Admin.updatePickup(req.body.e);
+        if(result.success){
+            return res.Ok(result.data);
+        }
+    }
+    res.BadRequest({},"Error adding pickup.");
+}
+
+
+
 
 /**
  * 

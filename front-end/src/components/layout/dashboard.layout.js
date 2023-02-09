@@ -1,6 +1,13 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
-
+import { useEffect } from "react";
+import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 function DashboardLayout() {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    useEffect(()=>{
+        var token = localStorage.getItem("token");
+        if (!token) navigate("/login");
+    },[location])
     return (
         <>
             <div className="d-flex side_bar" id="wrapper">
