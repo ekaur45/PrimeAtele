@@ -13,7 +13,7 @@ function CreateView(){
         e.preventDefault();
         if(password!=passwordR) return toastr.error("Passwords does not match");
         setIsLoading(true);
-        axios({url:config.apiUrl+'api/account/create',method:"POST",data:{email:email,password:password}}).then(x=>{
+        axios({url:config.apiUrl+'account/create',method:"POST",data:{email:email,password:password}}).then(x=>{
             setIsLoading(false);
             if(x.data.status == 200){
                 localStorage.setItem("token",x.data.data.token);
