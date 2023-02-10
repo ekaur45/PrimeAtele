@@ -66,6 +66,9 @@ function DashboardView() {
             setData(old);
         }
     }
+    const InitWow = e =>{
+        document.body.classList.toggle('sb-sidenav-toggled');
+    }
     return (<>
         <nav className="navbar navbar-expand-lg navbar-light bg-white p-0">
             <div className="container-fluid">
@@ -76,12 +79,12 @@ function DashboardView() {
                             <div className="col-12">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="logo d-flex align-items-center">
-                                        <label className="plus" id="sidebarToggle">+</label>
+                                    <label className="plus" id="sidebarToggle" onClick={InitWow}>+</label>
                                         <h2>Dashboard</h2>
                                     </div>
                                     <div className="">
-                                        {isDownloading && <a className="disabled"><i className="fa fa-user mr-2" aria-hidden="true"></i>Exporting Excel ...</a>}
-                                        {!isDownloading && <a style={{ cursor: "pointer" }} onClick={downloadExcel}><i className="fa fa-user mr-2" aria-hidden="true"></i>Export Excel</a>}
+                                        {isDownloading && <a className="disabled"><img src={require("../assets/img/excel-icon.png")} className={"mr-2"} />Exporting Excel ...</a>}
+                                        {!isDownloading && <a style={{ cursor: "pointer" }} onClick={downloadExcel}><img src={require("../assets/img/excel-icon.png")} className={"mr-2"} /> Export Excel</a>}
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +131,7 @@ function DashboardView() {
                             <tbody>
                                 {
                                     data && data.length > 0 && data.map((e, i) => {
-                                        return <tr>
+                                        return <tr key={i}>
                                             <td> {e.id}</td>
                                             <td>{e.name}</td>
                                             <td> {e.phone}</td>
@@ -143,7 +146,7 @@ function DashboardView() {
                                 {
                                     !(data && data.length > 0)&&<>
                                     <tr>
-                                        <td colSpan={7} className={"alert alert-dark"}>No data found
+                                        <td colSpan={7} className={"alert alert-dark text-center"}>No data found
                                         </td>
                                     </tr>
                                     </>

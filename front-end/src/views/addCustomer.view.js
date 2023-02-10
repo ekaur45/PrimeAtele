@@ -47,6 +47,24 @@ function AddCustomer() {
             setTodaysPickup("");
             setMeals("");
     }
+    useEffect(()=>{
+        //InitWow();
+    },[])
+    const InitWow = e =>{
+        document.body.classList.toggle('sb-sidenav-toggled');
+        // const sidebarToggle = document.body.querySelector('#sidebarToggle');
+        // if (sidebarToggle) {
+        //     // Uncomment Below to persist sidebar toggle between refreshes
+        //     // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+        //     //     document.body.classList.toggle('sb-sidenav-toggled');
+        //     // }
+        //     sidebarToggle.addEventListener('click', event => {
+        //         event.preventDefault();
+        //         document.body.classList.toggle('sb-sidenav-toggled');
+        //         localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+        //     });
+    //}
+}
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-white p-0">
@@ -58,7 +76,7 @@ function AddCustomer() {
                                 <div className="col-12">
                                     <div className="d-flex justify-content-between align-items-center">
                                         <div className="logo d-flex align-items-center">
-                                            <label className="plus" id="sidebarToggle">+</label>
+                                            <label className="plus" id="sidebarToggle" onClick={InitWow}>+</label>
                                             <h2>Add a Customer</h2>
                                         </div>
 

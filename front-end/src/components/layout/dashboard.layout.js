@@ -25,7 +25,8 @@ function DashboardLayout() {
                                     : "list-group-item list-group-item-action list-group-item-light pl-4 mt-2 mb-2 d-flex"
                         }>
                             <div className="side_menu_icon_wrapper">
-                                <i className="fas fa-th-large "></i>
+                                {/* <i className="fas fa-th-large "></i> */}
+                                <img src={require("../../assets/img/dashboard-icon.png")} className={"mr-2"} />
                             </div>Dashboard
                         </NavLink>
                         <NavLink to={`/add-customer`} className={({ isActive, isPending }) =>
@@ -36,7 +37,7 @@ function DashboardLayout() {
                                     : "list-group-item list-group-item-action list-group-item-light pl-4 mt-2 mb-2 d-flex"
                         }>
                             <div className="side_menu_icon_wrapper">
-                                <i className="fas fa-th-large "></i>
+                            <img src={require("../../assets/img/customer-icon.png")} className={"mr-2"} />
                             </div>Add Customers
                         </NavLink>
                         <NavLink to={`/logout`} className={({ isActive, isPending }) =>
@@ -47,7 +48,7 @@ function DashboardLayout() {
                                     : "list-group-item list-group-item-action list-group-item-light pl-4 mt-2 mb-2 d-flex"
                         }>
                             <div className="side_menu_icon_wrapper">
-                                <i className="fas fa-th-large "></i>
+                            <img src={require("../../assets/img/logout-icon.png")} className={"mr-2"} />
                             </div>Logout
                         </NavLink>
                        
