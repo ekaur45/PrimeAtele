@@ -17,9 +17,12 @@ function ProfileView() {
     const [note,setNote] = useState("");
     const [todaysPickup,setTodaysPickup] = useState("");
     const [meals,setMeals] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
     const getProfile = async ()=>{
         var token = localStorage.getItem("token");
+        setIsLoading(true);
         var res = await axios.get(config.apiUrl+"admin/get-customer?id="+id,{headers:{ "Authorization": token }})
+        setIsLoading(false);
         if(res.data.status == 200){
             var d = res.data.data;
             setName(d.name);
@@ -138,8 +141,15 @@ function ProfileView() {
                                         />
                                     </div>
 
-                                    <button type="submit" className="btn btn-primary">Save Changes</button>
-
+                                    {
+                                        isLoading?<>
+                                            <button type="button" disabled className="btn btn-primary">
+                                                <i className="fa-spinner fas mr-1"></i>
+                                                Saving Changes</button>
+                                        </>:<>
+                                            <button type="submit" className="btn btn-primary">Save Changes</button>
+                                        </>
+                                    }
                                 </form>
                                 <div className="make_Entry">
                                     <input type={"text"} className={"form-control"} placeholder={"Todays Pickup"}

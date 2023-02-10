@@ -44,5 +44,10 @@ const createAccount = async function (model) {
     return functionReturn("Error creating account", false);
 }
 
-const Account = { loginAccount, createAccount };
+const getUserByEmail = async email=>{
+    let query = 'call sp_get_user_by_email(?);';
+    var result = await mysqlSelect(query, [[email]]);
+    return result;
+}
+const Account = { loginAccount, createAccount,getUserByEmail };
 module.exports = Account;

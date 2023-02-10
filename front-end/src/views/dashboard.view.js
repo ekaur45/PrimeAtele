@@ -140,7 +140,14 @@ function DashboardView() {
                                         </tr>
                                     })
                                 }
-
+                                {
+                                    !(data && data.length > 0)&&<>
+                                    <tr>
+                                        <td colSpan={7} className={"alert alert-dark"}>No data found
+                                        </td>
+                                    </tr>
+                                    </>
+                                }
 
                             </tbody>
                         </table>

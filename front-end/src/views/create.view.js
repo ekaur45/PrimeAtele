@@ -70,7 +70,16 @@ function CreateView(){
                                         
                                         />
                                     </div>
-                                    <button type="submit" className="btn btn-primary">Create account</button>
+                                    {
+                                        isLoading?<>
+                                            <button type="button" disabled className="btn btn-primary">
+                                                <i className="fa-spinner fas mr-1"></i>
+                                                Creating account</button>
+                                        </>:<>
+                                            <button type="submit" className="btn btn-primary">Create account</button>
+                                        </>
+                                    }
+                                    
                                 </form>
                             </div>
                         </div>

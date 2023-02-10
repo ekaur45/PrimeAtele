@@ -10,7 +10,7 @@ const accountController ={};
  */
 accountController.login = async (req,res,next) =>{
     var model = new LoginModel(req.body);
-    if(!model.validate()) return res.BadRequest("All fields are required.");
+    if(!model.validate()) return res.BadRequest({},"All fields are required.");
     const result = await Account.loginAccount(model);
     result.success == true ? res.Ok(result.data) :res.BadRequest(result.data,"Username or password is not correct.");
 }
@@ -22,8 +22,9 @@ accountController.login = async (req,res,next) =>{
  */
 accountController.create = async (req,res,next)=>{
     var model = new CreateAccountModel(req.body);
-    if(!model.validate()) return res.BadRequest("All fields are required.");
-
+    if(!model.validate()) return res.BadRequest({},"All fields are required.");
+    var user = await Account.getUserByEmail(model.email);
+    if(user.success == true && user.data.length>0) return res.BadRequest({},"Account already exists.");
     const result = await Account.createAccount(model);
     result.success == true ? res.Ok(result.data) :res.BadRequest(result.data);
 }

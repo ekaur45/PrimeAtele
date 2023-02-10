@@ -1,0 +1,321 @@
+@font-face {
+  font-family: poppinsR;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: poppinsB;
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+.header_ {
+  padding: 25px 0px;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.1803921569);
+}
+.header_ .login a {
+  font-family: "poppinsR";
+  background-color: #1696CB;
+  color: #ffffff !important;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: block;
+  width: 220px;
+}
+.header_ h1 {
+  font-family: "poppinsB";
+}
+
+.SingUp {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+.SingUp .wrapper {
+  background-color: #F9F9F9;
+  border-radius: 10px;
+  padding: 50px;
+}
+.SingUp .wrapper h2 {
+  font-family: "poppinsB";
+  text-align: center;
+}
+.SingUp .wrapper p {
+  font-family: "poppinsR";
+  text-align: center;
+  color: #8D8D8D;
+}
+.SingUp .wrapper form button {
+  font-family: "poppinsR";
+  background-color: #1696CB;
+  color: #ffffff !important;
+  text-align: center;
+  border-radius: 10px;
+  width: 100%;
+  height: 60px;
+}
+.SingUp .wrapper form .input-group-addon {
+  position: absolute;
+  right: 20px;
+  top: 16px;
+  z-index: 100;
+}
+.SingUp .wrapper form .input-group-addon i {
+  color: #1696CB !important;
+}
+.SingUp .wrapper form .form-group input,
+.SingUp .wrapper form .form-group textarea {
+  font-family: "poppinsR" !important;
+  width: 100%;
+  border-color: transparent;
+  color: #6E6E6E;
+  font-weight: 600;
+  border-radius: 10px;
+  height: 60px;
+}
+.SingUp .wrapper form .form-check .check_ a {
+  font-family: "poppinsR";
+  font-size: 13px;
+  font-weight: 600;
+  color: #1696CB;
+}
+.SingUp .wrapper form .form-check .check_ label {
+  font-family: "poppinsR";
+  font-size: 13px;
+  color: #414141;
+  position: relative;
+  top: -3px;
+}
+.SingUp .wrapper form .form-check .check_ input {
+  color: #1696CB;
+}
+.SingUp .wrapper form .code_resent a {
+  font-family: "poppinsR";
+  color: #1696CB;
+  text-align: center;
+}
+.SingUp .wrapper form .password_reset_code {
+  width: 65px !important;
+  margin: 10px;
+  height: 65px !important;
+  font-size: 28px;
+  text-align: center;
+}
+.SingUp .wrapper .make_Entry {
+  margin-top: 20px;
+  font-family: "poppinsR";
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  width: 100%;
+  height: 60px;
+}
+.SingUp .wrapper .make_Entry button {
+  font-family: "poppinsR";
+  background-color: #1696CB;
+  color: #ffffff !important;
+  text-align: center;
+  border-radius: 10px;
+  margin-right: 20px;
+  width: 170px;
+}
+.SingUp .wrapper .make_Entry label {
+  font-family: "poppinsR";
+  color: #8E8E8E;
+  margin-left: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 0px;
+}
+.SingUp .wrapper .previous_pickups {
+  padding-top: 40px;
+}
+.SingUp .wrapper .previous_pickups label {
+  font-family: "poppinsR";
+  color: #000000;
+  font-weight: 600;
+}
+.SingUp .wrapper .previous_pickups .card_ {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border: none;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: start;
+  margin-bottom: 25px;
+}
+.SingUp .wrapper .previous_pickups .card_ .left {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.SingUp .wrapper .previous_pickups .card_ .left .circle {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #000000;
+  border-radius: 100%;
+}
+.SingUp .wrapper .previous_pickups .card_ .left .line {
+  height: 45px;
+  border: 1px dashed;
+  width: 1px;
+  margin-left: 4px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.SingUp .wrapper .previous_pickups .card_ .right label {
+  font-family: "poppinsR";
+  color: #000000;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 28px;
+}
+.SingUp .wrapper .previous_pickups .card_ .right p {
+  font-family: "poppinsR";
+  color: #000000;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+  margin-bottom: 0px;
+  text-align: start;
+  margin-right: 5px;
+}
+.SingUp .wrapper .previous_pickups .card_ .right i {
+  font-size: 10px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+.SingUp .wrapper .previous_pickups .card_ .right .w-140 {
+  width: 140px;
+}
+
+.side_bar .top {
+  padding: 25px 0px;
+  width: 100%;
+}
+.side_bar .top a {
+  font-family: "poppinsR";
+  background-color: #1696CB;
+  color: #ffffff !important;
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px 30px;
+  display: block;
+  text-decoration: none;
+}
+.side_bar .top h2 {
+  font-family: "poppinsB";
+  margin-bottom: 0px !important;
+}
+.side_bar .top .plus {
+  font-size: 30px;
+  font-family: "poppinsB";
+  color: #C1C1C1;
+  margin-bottom: 0px;
+  display: none;
+  margin-right: 10px;
+}
+.side_bar .side_menu_icon_wrapper {
+  width: 27px;
+  text-align: center;
+}
+.side_bar .list-group-item-light.list-group-item-action {
+  font-family: "poppinsR";
+  color: #C1C1C1;
+  background-color: transparent;
+  border-bottom: none;
+}
+.side_bar .list-group-item-light.list-group-item-action:focus,
+.side_bar .list-group-item-light.list-group-item-action:hover {
+  color: #1696CB !important;
+  background-color: transparent;
+  border-right: 4px solid;
+  border-color: #1696CB;
+  font-weight: 600;
+}
+.side_bar .active {
+  color: #1696CB !important;
+  background-color: transparent;
+  border-right: 4px solid !important;
+  border-color: #1696CB;
+  border-bottom: none !important;
+  border-top: none !important;
+  font-weight: 600;
+}
+.side_bar .content .has-search .form-control {
+  padding-left: 4rem;
+}
+.side_bar .content .has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 4.375rem;
+  height: 2.375rem;
+  line-height: 3.8rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+  font-size: 22px;
+}
+.side_bar .content input {
+  font-family: "poppinsR";
+  width: 100%;
+  border-color: transparent;
+  color: #6E6E6E;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  height: 60px;
+}
+.side_bar .content .custom_table {
+  overflow-x: scroll;
+}
+.side_bar .content .custom_table table {
+  font-family: "poppinsR";
+  width: 100%;
+  font-size: 13px;
+}
+.side_bar .content .custom_table table thead tr {
+  background-color: #1696CB;
+  color: #ffffff;
+}
+.side_bar .content .custom_table table thead th {
+  padding: 12px;
+}
+.side_bar .content .custom_table table thead th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.side_bar .content .custom_table table thead th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.side_bar .content .custom_table table tbody td {
+  padding: 12px;
+  border-left: 1px solid;
+  border-color: #CECECE;
+}
+.side_bar .content .custom_table table tbody td:last-child {
+  border-right: 1px solid;
+  border-color: #CECECE;
+}
+.side_bar .content .custom_table table button {
+  background-color: #ffffff;
+  border-color: #1696CB;
+  color: #1696CB;
+  font-size: 13px;
+}
+.side_bar ul {
+  list-style-type: none;
+}
+
+@media (max-width: 768px) {
+  .side_bar .top .plus {
+    display: block;
+  }
+}/*# sourceMappingURL=style.css.map */
+
+.form-control:focus{
+  box-shadow:none;
+}

@@ -38,9 +38,11 @@ function Pickup(props) {
                     {/* <p>10:00 AM | Monday June 23, 2023</p> */}
                     {
                         e.DateEdit?<>
-                            <input type={"date-time"} 
+                            <input type={"datetime-local"} 
                             className={"form-control"} style={{height:"24px",border: "1px solid #f9f9f9"}}
-                            value={new Date(e.enrtydate)} />
+                            value={(new Date(e.enrtydate)).toISOString().substring(0, 16)} 
+                            onChange={c=>{e.enrtydate = c.target.value;setE({...e})}}
+                            />
                             <button onClick={c=>{
                                 onTickSubmit(c);
                                 e.DateEdit = false;
