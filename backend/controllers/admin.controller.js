@@ -32,7 +32,7 @@ adminController.getCustomer = async (req, res, next) => {
  */
 adminController.createCustomer = async (req, res, next) => {
     var model = new CustomerModel(req.body);
-    model.userId = req.user.id;
+    // model.userId = req.user.id;
     if (!model.validate()) return res.BadRequest({},"All fields are required.");
     const result = await Admin.createCustomer(model);
     result.success == true ? res.Ok({}, "Customer added.") : res.BadRequest(result.data,"Error adding customer.");

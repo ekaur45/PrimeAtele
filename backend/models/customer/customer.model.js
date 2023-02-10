@@ -6,7 +6,7 @@ class CustomerModel{
         this.note = obj.note??"";
         this.todaysPickup = obj.todaysPickup??"";
         this.meals = obj.meals??"";
-        this.userId = 0;
+        this.userId = obj.id??0;
         this.validate = function(){
             return this.name && this.email && this.phone && this.note && this.todaysPickup && this.meals && this.userId;
         }
