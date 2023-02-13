@@ -48,6 +48,7 @@ function ProfileView() {
         getPickups();
     }
     const onEditFormSubmit = async e =>{
+        setIsLoading(true);
         e.preventDefault();
         var token = localStorage.getItem("token");
         var result = await axios({ url: config.apiUrl+"admin/edit-customer", method: "POST",data:{
@@ -59,6 +60,7 @@ function ProfileView() {
             todaysPickup,
             meals
         }, headers: { "Authorization": token } });
+        setIsLoading(false);
         if (result.data.status == 401) return navigate("/login");
         if (result.data.status == 200) {
             getProfile();
