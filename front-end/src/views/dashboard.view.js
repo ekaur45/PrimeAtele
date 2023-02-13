@@ -136,8 +136,8 @@ function DashboardView() {
                                             <td>{e.name}</td>
                                             <td> {e.phone}</td>
                                             <td> {e.email} </td>
-                                            <td> {e.todaysPickup}</td>
-                                            <td>{e.meals} meals grabbed</td>
+                                            <td> {e.meals}</td>
+                                            <td>{e.todaysPickup} meals grabbed</td>
 
                                             <td><NavLink to={`/edit-customer/${e.id}`} className="btn btn-outline-info">View Profile</NavLink>  </td>
                                         </tr>
