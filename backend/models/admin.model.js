@@ -50,19 +50,20 @@ Admin.updatePickup =async (d)=>{
 }
 async function readXlsx(){
     var XLSX = require('xlsx')
-    var workbook = XLSX.readFile('forFiverr.xlsx');
+    var workbook = XLSX.readFile(__dirname+'/forFiverr.xlsx');
     var sheet_name_list = workbook.SheetNames;
     var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
     let d = [];
     //console.log(xlData);
     for (let i = 0; i < xlData.length; i++) {
         const el = xlData[i];
-        d.push([el.Name,el['remaining meals'],2])
+        d.push([el.Name,el['remaining meals'],4])
     }
     return d;
 }
 Admin.importExcel = async () =>{
-    let q = "insert into customer(`name`,meals,userid) ?"
-    return await mysqlExecute(q,readXlsx())
+    let q = "insert into customer(`name`,meals,userid) values ?"
+    let values = await readXlsx();
+    return await mysqlExecute(q,[values])
 }
 module.exports = Admin;

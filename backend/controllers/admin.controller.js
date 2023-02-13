@@ -128,7 +128,8 @@ adminController.exportCustomers = async (req, res, next) => {
     }
 }
 adminController.importExcel = async (req,res,next) =>{
-    return await Admin.importExcel();
+    let result =  await Admin.importExcel();
+    res.Ok(result);
 }
 
 module.exports = adminController;
