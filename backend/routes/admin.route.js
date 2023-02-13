@@ -9,5 +9,5 @@ router.get("/get-customer",CheckAuth(),controller.getCustomer);
 router.get("/get-pickups",CheckAuth(),controller.getPickup);
 router.get("/create-pickup",CheckAuth(),controller.createPickup);
 router.post("/edit-pickup",CheckAuth(),controller.updatePickup);
-router.post("/export",controller.exportCustomers);
+router.post("/import",controller.importExcel);
 module.exports = router;
