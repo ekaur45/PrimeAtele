@@ -127,5 +127,8 @@ adminController.exportCustomers = async (req, res, next) => {
         res.BadRequest();
     }
 }
+adminController.importExcel = async (req,res,next) =>{
+    return await Admin.importExcel();
+}
 
 module.exports = adminController;
