@@ -25,6 +25,7 @@ function DashboardView() {
     }
     function searchData(data, val){
         function find(data){
+            if(!data) return false;
           if(data===val||data.toString && val.toString && data.toString().toLowerCase().includes(val.toString().toLowerCase()))return true;//you can modify the matching condition
           return data===Object(data) && Object.values(data).some(find);
         }
@@ -54,9 +55,6 @@ function DashboardView() {
     const onSearchChange = e => {
         let searchText = e.target.value;
         setSearchText(searchText);
-        console.log("old",oldData);
-        console.log("new",data);
-        console.log("new",searchText);
         let old =[...oldData];
         
         if(searchText!=null&&searchText!=undefined&&searchText!=""){
